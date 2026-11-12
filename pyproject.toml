@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-residue"
+version = "0.2.0"
+description = "Find and clean leftovers from 22 AI coding agents (Claude Code, Codex, Cursor, Qoder, WorkBuddy, ...)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "0721gaoshoua" }]
+keywords = ["ai", "agent", "cleanup", "claude-code", "codex", "cursor", "disk-space", "cli"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Utilities",
+]
+
+[project.scripts]
+agent-residue = "agent_residue.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/0721gaoshoua/agent-residue"
+Issues = "https://github.com/0721gaoshoua/agent-residue/issues"
+
+[tool.setuptools]
+packages = ["agent_residue"]
+
+[tool.setuptools.package-data]
+agent_residue = ["targets.json"]

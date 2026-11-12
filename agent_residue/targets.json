@@ -1,0 +1,371 @@
+{
+  "version": 1,
+  "tiers": {
+    "0": "protected — never removed (credentials, settings, live components)",
+    "1": "cache/log — safe, rebuilt automatically",
+    "2": "re-downloadable — removed, comes back on next launch",
+    "3": "user data — conversations, projects, history, databases"
+  },
+  "agents": [
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "vendor": "Anthropic",
+      "processes": ["claude", "claude-code"],
+      "verified": true,
+      "paths": [
+        ["~/.claude/downloads", 1, "downloads"],
+        ["~/.claude/cache", 1, "cache"],
+        ["~/.claude/logs", 1, "logs"],
+        ["~/.claude/debug", 1, "debug logs"],
+        ["~/.claude/shell-snapshots", 1, "shell snapshots"],
+        ["~/.claude/statsig", 1, "statsig cache"],
+        ["~/.claude/session-env", 1, "session env"],
+        ["~/.claude/ide", 1, "ide lockfiles"],
+        ["~/.claude/plugins", 2, "plugins"],
+        ["~/.claude/backups", 3, "backups"],
+        ["~/.claude/projects", 3, "conversations (jsonl)"],
+        ["~/.claude/todos", 3, "todos"],
+        ["~/.claude/file-history", 3, "edit history"],
+        ["~/.claude/history.jsonl", 3, "prompt history"],
+        ["~/.claude.json", 3, "app state"],
+        ["~/.claude/settings.json", 0, "settings"],
+        ["~/.claude/.credentials.json", 0, "credentials"],
+        ["%APPDATA%/Claude/Cache", 1, "desktop cache"],
+        ["%APPDATA%/Claude/Code Cache", 1, "desktop code cache"],
+        ["%APPDATA%/Claude/GPUCache", 1, "desktop gpu cache"],
+        ["~/Library/Application Support/Claude/Cache", 1, "desktop cache"],
+        ["~/Library/Application Support/Claude/Code Cache", 1, "desktop code cache"]
+      ]
+    },
+    {
+      "id": "codex",
+      "name": "Codex CLI",
+      "vendor": "OpenAI",
+      "processes": ["codex"],
+      "verified": true,
+      "paths": [
+        ["~/.codex/.tmp", 1, "temp workspace"],
+        ["~/.codex/tmp", 1, "temp"],
+        ["~/.codex/cache", 1, "cache"],
+        ["~/.codex/log", 1, "logs"],
+        ["~/.codex/plugins", 2, "plugins"],
+        ["~/.codex/sessions", 3, "sessions"],
+        ["~/.codex/archived_sessions", 3, "archived sessions"],
+        ["~/.codex/history.jsonl", 3, "history"],
+        ["~/.codex/auth.json", 0, "credentials"],
+        ["~/.codex/config.toml", 0, "config"]
+      ]
+    },
+    {
+      "id": "qoder",
+      "name": "Qoder",
+      "vendor": "Alibaba",
+      "processes": ["qoder", "Qoder"],
+      "verified": true,
+      "paths": [
+        ["~/.qoder/logs", 1, "logs"],
+        ["~/.qoder/tmp", 1, "temp"],
+        ["~/.qoder/.cache", 1, "cache"],
+        ["~/.qoder/shell-snapshots", 1, "shell snapshots"],
+        ["~/.qoder/ipc", 1, "stale ipc endpoints"],
+        ["~/.qoder/plugins", 2, "plugins"],
+        ["~/.qoder/skills", 2, "bundled skills"],
+        ["~/.qoder/file-history", 3, "edit history"],
+        ["~/.qoder/projects", 3, "per-project sessions"],
+        ["~/.qoder/memory", 3, "memory"],
+        ["~/.qoder/.auth", 0, "credentials"],
+        ["~/.qoder/settings.json", 0, "settings"],
+        ["~/.qoder/browser-connector", 0, "chrome native host (live)"],
+        ["~/.qoder/state.json", 0, "state"],
+        ["%APPDATA%/com.qoder.app.stable/Cache", 1, "electron cache"],
+        ["%APPDATA%/com.qoder.app.stable/Code Cache", 1, "electron code cache"],
+        ["%APPDATA%/com.qoder.app.stable/GPUCache", 1, "electron gpu cache"],
+        ["%APPDATA%/com.qoder.app.stable/Crashpad", 1, "crash dumps"],
+        ["%APPDATA%/com.qoder.app.stable/logs", 1, "electron logs"],
+        ["%APPDATA%/com.qoder.app.stable/main.sqlite", 3, "session database"],
+        ["%APPDATA%/com.qoder.app.stable/auth.v1.dat", 0, "credentials"],
+        ["%LOCALAPPDATA%/qoder-updater", 1, "update packages"]
+      ]
+    },
+    {
+      "id": "workbuddy",
+      "name": "WorkBuddy",
+      "vendor": "Tencent",
+      "processes": ["WorkBuddy AI", "workbuddy"],
+      "verified": true,
+      "paths": [
+        ["~/.workbuddy/logs", 1, "legacy cli logs"],
+        ["~/.workbuddy-ai/logs", 1, "logs"],
+        ["~/.workbuddy-ai/cache", 1, "cache"],
+        ["~/.workbuddy-ai/traces", 1, "agent traces"],
+        ["~/.workbuddy-ai/audit-log", 1, "audit log"],
+        ["~/.workbuddy-ai/clipboard-images", 1, "clipboard images"],
+        ["~/.workbuddy-ai/shell-snapshots", 1, "shell snapshots"],
+        ["~/.workbuddy-ai/pending-telemetry", 1, "pending telemetry"],
+        ["~/.workbuddy-ai/blobs", 2, "blob cache"],
+        ["~/.workbuddy-ai/changes-detail", 2, "diff cache"],
+        ["~/.workbuddy-ai/changes-index", 2, "diff index"],
+        ["~/.workbuddy-ai/binaries", 2, "toolchain binaries"],
+        ["~/.workbuddy-ai/plugins", 2, "plugins"],
+        ["~/.workbuddy-ai/app", 2, "embedded app"],
+        ["~/.workbuddy-ai/external-packages", 2, "external packages"],
+        ["~/.workbuddy-ai/connectors-marketplace", 2, "marketplace cache"],
+        ["~/.workbuddy-ai/file-history", 3, "edit history"],
+        ["~/.workbuddy-ai/projects", 3, "project sessions"],
+        ["~/.workbuddy-ai/workspace", 3, "workspace snapshots"],
+        ["~/.workbuddy-ai/sessions", 3, "sessions"],
+        ["~/.workbuddy-ai/memory", 3, "memory"],
+        ["~/.workbuddy-ai/storage", 3, "conversation metadata"],
+        ["~/.workbuddy-ai/workbuddy.db", 3, "main database"],
+        ["~/WorkBuddy AI", 3, "task outputs"],
+        ["~/.workbuddy-ai/security", 0, "threat database"],
+        ["~/.workbuddy-ai/settings.json", 0, "settings"],
+        ["%LOCALAPPDATA%/@genieworkbuddy-desktop-updater", 1, "update packages"]
+      ]
+    },
+    {
+      "id": "codebuddy",
+      "name": "CodeBuddy",
+      "vendor": "Tencent",
+      "processes": ["CodeBuddy"],
+      "verified": true,
+      "paths": [
+        ["~/.codebuddy/logs", 1, "logs"],
+        ["~/.codebuddy/diagnostics", 1, "diagnostics"],
+        ["%LOCALAPPDATA%/CodeBuddyExtension", 2, "vscode extension"]
+      ]
+    },
+    {
+      "id": "trae",
+      "name": "Trae",
+      "vendor": "ByteDance",
+      "processes": ["Trae"],
+      "verified": true,
+      "paths": [
+        ["~/.trae/trae-browser-screenshots", 1, "browser screenshots"],
+        ["%APPDATA%/Trae/logs", 1, "electron logs"],
+        ["%APPDATA%/Trae/Cache", 1, "electron cache"],
+        ["%APPDATA%/Trae/Code Cache", 1, "electron code cache"],
+        ["%APPDATA%/Trae/GPUCache", 1, "electron gpu cache"],
+        ["~/Library/Application Support/Trae/logs", 1, "electron logs"],
+        ["~/.config/Trae/logs", 1, "electron logs"],
+        ["~/.trae/extensions", 2, "installed extensions (reinstall needed)"],
+        ["~/.trae/memory", 3, "memory"]
+      ]
+    },
+    {
+      "id": "kimi-work",
+      "name": "Kimi Work",
+      "vendor": "Moonshot",
+      "processes": ["kimi", "kimi-work"],
+      "verified": true,
+      "paths": [
+        ["~/.kimi-work/logs", 1, "logs"],
+        ["~/.kimi-work/bin", 2, "toolchain binaries"]
+      ]
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "vendor": "Anysphere",
+      "processes": ["Cursor"],
+      "verified": false,
+      "paths": [
+        ["%APPDATA%/Cursor/Cache", 1, "electron cache"],
+        ["%APPDATA%/Cursor/Code Cache", 1, "electron code cache"],
+        ["%APPDATA%/Cursor/GPUCache", 1, "electron gpu cache"],
+        ["%APPDATA%/Cursor/CachedData", 1, "cached data"],
+        ["%APPDATA%/Cursor/Crashpad", 1, "crash dumps"],
+        ["%APPDATA%/Cursor/logs", 1, "logs"],
+        ["~/Library/Application Support/Cursor/Cache", 1, "electron cache"],
+        ["~/Library/Application Support/Cursor/Code Cache", 1, "electron code cache"],
+        ["~/Library/Application Support/Cursor/logs", 1, "logs"],
+        ["~/.config/Cursor/Cache", 1, "electron cache"],
+        ["~/.config/Cursor/logs", 1, "logs"],
+        ["~/.cursor/extensions", 2, "installed extensions"],
+        ["%APPDATA%/Cursor/User/globalStorage", 3, "global storage"],
+        ["%APPDATA%/Cursor/User/workspaceStorage", 3, "workspace storage"],
+        ["%APPDATA%/Cursor/User/settings.json", 0, "settings"]
+      ]
+    },
+    {
+      "id": "windsurf",
+      "name": "Windsurf",
+      "vendor": "Codeium",
+      "processes": ["Windsurf"],
+      "verified": false,
+      "paths": [
+        ["%APPDATA%/Windsurf/Cache", 1, "electron cache"],
+        ["%APPDATA%/Windsurf/Code Cache", 1, "electron code cache"],
+        ["%APPDATA%/Windsurf/GPUCache", 1, "electron gpu cache"],
+        ["%APPDATA%/Windsurf/logs", 1, "logs"],
+        ["~/Library/Application Support/Windsurf/Cache", 1, "electron cache"],
+        ["~/Library/Application Support/Windsurf/logs", 1, "logs"],
+        ["~/.config/Windsurf/Cache", 1, "electron cache"],
+        ["~/.codeium/windsurf/memories", 3, "memories"]
+      ]
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "vendor": "Google",
+      "processes": ["gemini"],
+      "verified": false,
+      "paths": [
+        ["~/.gemini/tmp", 1, "temp"],
+        ["~/.gemini/logs", 1, "logs"],
+        ["~/.gemini/history", 3, "history"],
+        ["~/.gemini/settings.json", 0, "settings"],
+        ["~/.gemini/oauth_creds.json", 0, "credentials"]
+      ]
+    },
+    {
+      "id": "copilot-cli",
+      "name": "GitHub Copilot CLI",
+      "vendor": "GitHub",
+      "processes": ["copilot"],
+      "verified": false,
+      "paths": [
+        ["~/.copilot/logs", 1, "logs"],
+        ["~/.copilot/history", 3, "history"],
+        ["~/.copilot/config.json", 0, "config"]
+      ]
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "vendor": "Cline Bot",
+      "processes": [],
+      "verified": false,
+      "paths": [
+        ["%APPDATA%/Code/User/globalStorage/saoudrizwan.claude-dev", 3, "tasks and conversations"],
+        ["~/Library/Application Support/Code/User/globalStorage/saoudrizwan.claude-dev", 3, "tasks and conversations"],
+        ["~/.config/Code/User/globalStorage/saoudrizwan.claude-dev", 3, "tasks and conversations"]
+      ]
+    },
+    {
+      "id": "roo-code",
+      "name": "Roo Code",
+      "vendor": "Roo Veterinary",
+      "processes": [],
+      "verified": false,
+      "paths": [
+        ["%APPDATA%/Code/User/globalStorage/rooveterinaryinc.roo-cline", 3, "tasks and conversations"],
+        ["~/Library/Application Support/Code/User/globalStorage/rooveterinaryinc.roo-cline", 3, "tasks and conversations"],
+        ["~/.config/Code/User/globalStorage/rooveterinaryinc.roo-cline", 3, "tasks and conversations"]
+      ]
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "vendor": "Aider",
+      "processes": ["aider"],
+      "verified": false,
+      "paths": [
+        ["~/.aider/caches", 1, "caches"],
+        ["~/.aider/analytics", 1, "analytics"],
+        ["~/.aider.conf.yml", 0, "config"]
+      ]
+    },
+    {
+      "id": "continue",
+      "name": "Continue",
+      "vendor": "Continue",
+      "processes": [],
+      "verified": false,
+      "paths": [
+        ["~/.continue/index", 1, "codebase index"],
+        ["~/.continue/logs", 1, "logs"],
+        ["~/.continue/sessions", 3, "sessions"],
+        ["~/.continue/config.json", 0, "config"]
+      ]
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "vendor": "SST",
+      "processes": ["opencode"],
+      "verified": false,
+      "paths": [
+        ["~/.local/share/opencode/log", 1, "logs"],
+        ["%LOCALAPPDATA%/opencode/log", 1, "logs"],
+        ["~/.local/share/opencode/storage", 3, "session storage"],
+        ["~/.config/opencode", 0, "config"]
+      ]
+    },
+    {
+      "id": "zed",
+      "name": "Zed",
+      "vendor": "Zed Industries",
+      "processes": ["zed"],
+      "verified": false,
+      "paths": [
+        ["%APPDATA%/Zed/logs", 1, "logs"],
+        ["%APPDATA%/Zed/Cache", 1, "cache"],
+        ["~/Library/Application Support/Zed/logs", 1, "logs"],
+        ["~/.local/share/zed/logs", 1, "logs"]
+      ]
+    },
+    {
+      "id": "amp",
+      "name": "Amp",
+      "vendor": "Sourcegraph",
+      "processes": ["amp"],
+      "verified": false,
+      "paths": [
+        ["~/.amp/logs", 1, "logs"],
+        ["~/.amp/cache", 1, "cache"],
+        ["~/.amp/sessions", 3, "sessions"]
+      ]
+    },
+    {
+      "id": "droid",
+      "name": "Factory Droid",
+      "vendor": "Factory",
+      "processes": ["droid"],
+      "verified": false,
+      "paths": [
+        ["~/.factory/logs", 1, "logs"],
+        ["~/.factory/cache", 1, "cache"],
+        ["~/.factory/sessions", 3, "sessions"]
+      ]
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "vendor": "Charm",
+      "processes": ["crush"],
+      "verified": false,
+      "paths": [
+        ["~/.local/share/crush/logs", 1, "logs"],
+        ["~/.local/share/crush/cache", 1, "cache"],
+        ["~/.config/crush", 0, "config"]
+      ]
+    },
+    {
+      "id": "goose",
+      "name": "Goose",
+      "vendor": "Block",
+      "processes": ["goose"],
+      "verified": false,
+      "paths": [
+        ["~/.local/share/goose/logs", 1, "logs"],
+        ["~/.config/goose", 0, "config"]
+      ]
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "vendor": "Alibaba",
+      "processes": ["qwen"],
+      "verified": false,
+      "paths": [
+        ["~/.qwen/tmp", 1, "temp"],
+        ["~/.qwen/logs", 1, "logs"],
+        ["~/.qwen/history", 3, "history"],
+        ["~/.qwen/settings.json", 0, "settings"]
+      ]
+    }
+  ]
+}
